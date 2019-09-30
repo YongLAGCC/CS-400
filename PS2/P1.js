@@ -21,10 +21,8 @@ const isEven= function* (){
     }
 }
 
-const evens = n => isEven()
-myEven = evens()
+const even = n => isEven()
+myEven = even()
 
-let count = 6;
-while (count --> 0) {
-    console.log(myEven.next().value)
-}
+let c = 6;
+while (c --> 0) { console.log(myEven.next().value) }

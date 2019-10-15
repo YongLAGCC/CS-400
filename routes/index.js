@@ -1,6 +1,10 @@
 var express = require('express');
+var bodyParser = require('body-parser');
+
 var router = express.Router();
 
+
+var jsonParser = bodyParser.json(); 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'I like C@400!!!' });
@@ -8,40 +12,21 @@ router.get('/', function(req, res, next) {
 
 router.get('/ps3', function (req, res, next) {
   res.render(
-    'csps3', {
+    'ps3', {
       professorName: "Donham", 
       className: "CS400", 
       bu: "Boston bu" 
     } 
     );
-})
-.post (function (req, res, next) { 
-  //vars on request body
-  res.send(`Bar has the value ${req.body.bar}`);
-})
+});
 
-.put (function (req, res, next) { 
-  //vars on body
-  res.send(`Bar has the value ${req.body.bar}`);
+router.post('/ps3', (req, res, next) => {
+  let { yong } = req.body; 
+  let lengthStr = yong.length
+  res.render(
+    'ps3', { yong, lengthStr   
+    } )
 })
-  // .get(function(req, res, next) {
-  //   res.render('csps3', {bu: "Donham"});
-  // });
-
-router.route('/:name')
-    .get(function(bob, fred, sally) {
-      fred.send(`Bar has the value ${bob.params.name}` );
-    })
-
-router.get('/:first', function(req, res, next) {
-  res.send(`Bar has the value ${req.params.first}`);
-})
-router.route('/:first/:last')
-  .get(function(bob, fred, sally) {
-    fred.send(`Bar has the value ${bob.params.first} ${bob.params.last}` );
-})
-  
-
 
 
 module.exports = router;

@@ -1,1 +1,2 @@
 *.trygitinoreworkds
+*./node_modules

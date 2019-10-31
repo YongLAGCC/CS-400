@@ -1,11 +1,11 @@
 # CS-400
 
 
-Push to new branch from local repository: 
+##Push to new branch from local repository: 
 
-*git clone from master: 
+*_git clone_ from master: 
 *copy local repo to master folder
-*git checkout -b newbranch
-*git add . 
-*git commit ...
-*git push origin newbranch
+*_git checkout -b_ newbranch
+*_git add ._ 
+*_git commit -m "~"_
+*_git push origin_ newbranch

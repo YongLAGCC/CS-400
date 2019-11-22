@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="www" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/../ps6/bin/www" working-dir="$PROJECT_DIR$/../ps6">
+    <envs>
+      <env name="DEBUG" value="ps4:*" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>

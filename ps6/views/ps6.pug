@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  
+    h2 Boston 
+    p The latitude is #{lat}
+    p The longitude is #{lon}
+    p The temperature is #{temp_f}
+    P The condition is #{wx_desc}
+
+
+    form(method='POST' action='/ps6/addresult')
+        h2 Boston
+        
+        p lat: 
+        input(type='text' name = 'mongoLat' required='')
+        p long:
+        input(type='text' name = 'mongoLon' required='')
+        p temp:
+        input(type='text' name = 'mongoTemp' required='')
+        p cond: 
+        input(type='text' name = 'mongoCond' required='')
+        p
+
+        input(type='submit' value='Confirmed')
+

@@ -9,17 +9,17 @@ block content
     P The condition is #{wx_desc}
 
 
-    form(method='POST' action='/ps6/addresult')
+    form(method='POST' action='/ps6/result')
         h2 Boston
         
         p lat: 
-        input(type='text' name = 'mongoLat' required='')
+        input(type='text' name = 'Lat' required='')
         p long:
-        input(type='text' name = 'mongoLon' required='')
+        input(type='text' name = 'Lon' required='')
         p temp:
-        input(type='text' name = 'mongoTemp' required='')
+        input(type='text' name = 'Temp' required='')
         p cond: 
-        input(type='text' name = 'mongoCond' required='')
+        input(type='text' name = 'Cond' required='')
         p
 
         input(type='submit' value='Confirmed')

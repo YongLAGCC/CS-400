@@ -28,10 +28,10 @@ router.get('/', function (req, res, next) {
 });
 
 var nameSchema = new mongoose.Schema({
-    mongoLat: String,
-    mongoLon: String,
-    mongoTemp: String,
-    mongoCond: String
+    Lat: String,
+    Lon: String,
+    Temp: String,
+    Cond: String
 });
 var User = mongoose.model("User", nameSchema);
 
@@ -40,7 +40,7 @@ router.post("/result", (req, res) => {
 
     myData.save()
         .then(item => {
-            res.send( "Lat: " + myData.mongoLat + " Longitude: " + myData.mongoLon + " Temperature: " + myData.mongoTemp + " Condition: " + myData.mongoCond  );
+            res.send( "Lat: " + myData.Lat + " Longitude: " + myData.Lon + " Temperature: " + myData.Temp + " Condition: " + myData.Cond  );
         })
         .catch(err => {
             res.status(400).send("e");

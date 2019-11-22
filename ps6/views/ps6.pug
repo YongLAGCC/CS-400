@@ -1,26 +1,28 @@
 extends layout
 
 block content
+    h1 Boston
+
+    tr Tmperature : #{temp_f}
+    br
+    br
+    tr Condition : #{wx_desc}
+    br   
+    br 
+    th Latitude : #{lat}
+    br
+    br 
+    th Longitude : #{lon}
   
-    h2 Boston 
-    p The latitude is #{lat}
-    p The longitude is #{lon}
-    p The temperature is #{temp_f}
-    P The condition is #{wx_desc}
-
-
-    form(method='POST' action='/ps6/result')
-        h2 Boston
-        
-        p lat: 
-        input(type='text' name = 'Lat' required='')
-        p long:
-        input(type='text' name = 'Lon' required='')
-        p temp:
-        input(type='text' name = 'Temp' required='')
-        p cond: 
-        input(type='text' name = 'Cond' required='')
+    body
+    form(action='/ps6/results', method='POST')
         p
-
-        input(type='submit' value='Confirmed')
-
+        | title: 
+        input(type='text', name='mongoTem', value='')
+        |          year: 
+        input(type='text', name='mongoCon', value='')
+        |          imdb: 
+        input(type='text', name='mongoLat', value='')
+        |          imdb: 
+        input(type='text', name='mongoLon', value='')
+        input(type='submit', value='Submit')

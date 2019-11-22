@@ -5,9 +5,11 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
+
 const ps4Router = require('./routes/ps6');
 
 const app = express();
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

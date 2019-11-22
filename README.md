@@ -16,7 +16,7 @@
 *__git push origin__ newbranch
 
 
-
+**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**
 
 **Clone all remote branches**
 $ git clone git://example.com/myproject

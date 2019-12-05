@@ -23,12 +23,7 @@ $ git clone git://example.com/myproject
 $ cd myproject
 
 **$ git branch -a**
-* master
-  remotes/origin/HEAD
-  remotes/origin/master
-  remotes/origin/v1.0-stable
-  remotes/origin/experimental
+
   
-  **Pull out from upstream branch**
-  $ git checkout origin/experimental
+**$ git checkout origin/experimental**
   

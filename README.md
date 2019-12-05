@@ -29,9 +29,6 @@ $ cd myproject
   remotes/origin/v1.0-stable
   remotes/origin/experimental
   
-  **Peek at an upstream branch**
+  **Pull out from upstream branch**
   $ git checkout origin/experimental
   
-  **work on that branch**
-  
-  $ git checkout experimental

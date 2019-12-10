@@ -7,17 +7,24 @@
 <body ng-app="myApp">
   <div ng-controller="myCtrl">
     <form>
-      Character :
+      Test the length of input string at least 1:
+      <br>
       <input type="text" name="name" ngModel minlength="1" required>
       <br>
 
       <input type="submit" value="check" ng-click="submit()">
     </form>
-  
+
   </div>
-  <div>
-    <h2> Emplyee Detail</h2>
-    
+  <div style="text-align: center;" >
+    <h2 *ngIf="true">
+      Welcom to {{title}}</h2>
+      <h2 *ngIf="false">
+        I am {{name}}
+      </h2>
+
+      <app-employee></app-employee>
+
 
   </div>
 

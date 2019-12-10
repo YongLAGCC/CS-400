@@ -28,9 +28,6 @@ const weatherSchema = new mongoose.Schema({
 });
 
 
-
-
-
 const Users = mongoose.model("Users", weatherSchema);
 
 // const Boston = new Weather({
@@ -64,6 +61,10 @@ router.get('/ng', function(req, res) {
     res.sendFile('app.component.html', {'root': '../angularApp/src/app'});
 })
 
+// router.get('/ngEmployee', function(req, res) {
+//     res.sendFile('employee.component.html', {'root': '../angularApp/src/app/employee'});
+// })
+
 router.get('/w', (req, res, next) => {
     res.send('222222');
   })
@@ -72,8 +73,6 @@ router.get('/w', (req, res, next) => {
       res.render('index', { title: 'poster' });
     });
 
-
-  
 
 router.get('/', (req, res, next) =>{
     console.log(res);
@@ -97,3 +96,5 @@ router.get('/', (req, res, next) =>{
 
 
 module.exports = router;
+
+

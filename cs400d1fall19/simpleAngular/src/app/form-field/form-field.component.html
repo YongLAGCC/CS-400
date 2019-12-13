@@ -1,0 +1,16 @@
+<p>
+  form-field works!
+</p>
+
+<label>Input text: </label>
+<input [(ngModel)]="boxText" type="text"/>
+<br/>
+{{boxText}}
+<br/>
+
+<button (dblclick)="reverseIt()" >ReverseIt!</button>
+{{reversedText}}
+
+<!--
+<app-inside-component></app-inside-component>
+-->

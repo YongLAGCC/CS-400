@@ -26,8 +26,13 @@ const weatherSchema = new mongoose.Schema({
     mongoLat: String, 
     mongoLon: String
 });
+const cacheSchema = new mongoose.Schema({
+    index: String,
+    content: String,
+})
 
 const Users = mongoose.model("Users", weatherSchema);
+const Caches = mongoose.model("Caches", cacheSchema)
 
 // const Boston = new Weather({
 //     mongoTem: " 324", 
@@ -43,18 +48,37 @@ const Users = mongoose.model("Users", weatherSchema);
 //     }
 // })
 
-router.post('/results', function(req, res) {
-    const BostonWeather = new Users(req.body);
+router.post('/results', async function(req, res) {
+
+    const index = JSON.stringify(req.body)
+    const cacheFound = await db.collections.caches.findOne({index})
     
-    BostonWeather.save()
-        .then( function(item) {
-            res.send("temp -> "+ BostonWeather.mongoTem +   "log ->  " + BostonWeather.mongoLon
-            +" lat ->  "+BostonWeather.mongoLat + "condition-> "+ BostonWeather.mongoCon);
-        })
-        .catch( function(err){
-            res.status(400).send("cannot save it");
-        })
+    if(cacheFound) {
+        const {index, content} = cacheFound
+        send(JSON.parse(content), true)
+    }
+    else {
+        const content = index
+        await (new Caches({index, content})).save()
+        send(content, false)
+    }
+
+    function send(content, isFromCache) {
+
+        const BostonWeather = new Users(req.body);
+        BostonWeather.save()
+            .then( function(item) {
+                res.send("temp -> "+ BostonWeather.mongoTem +   "log ->  " + BostonWeather.mongoLon
+                +" lat ->  "+BostonWeather.mongoLat + "condition-> "+ BostonWeather.mongoCon + " fromCache -> " + isFromCache);
+            })
+            .catch( function(err){
+                res.status(400).send("cannot save it");
+            })
+    }
+
 })
+
+
 
 
 router.get('/w', (req, res, next) => {
